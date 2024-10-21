@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Paint Webpage</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Paint Your Own Picture</h1>
+
+  <p>
+    Set Width
+    <input type="number" onchange="setWidth(this.value)" />
+    Set Height
+    <input type="number" onchange="setHeight(this.value)" />
+  </p>
+
+  <canvas id="canvas1" width="500" height="250" onmousedown="startPaint()" 
+          onmousemove="doPaint(event.offsetX, event.offsetY)" 
+          onmouseup="endPaint()"></canvas>
+
+  <p>
+    Brush Color:
+    <input type="color" value="#000" onchange="changeColor(this.value)" />
+    Brush Size:
+    <input type="range" id="sizeInput" min="1" max="50" value="50" oninput="resizeBrush(this.value)" />
+    <output id="sizeOutput">50</output>
+  </p>
+
+  <p>
+    <input type="button" id="clear" value="Clear Canvas" onclick="clearCanvas()" />
+  </p>
+
+  <p style="text-align: center; margin-top: 20px;">
+    Created by Baran Turken
+  </p>
+  
+  <script src="script.js"></script>
+</body>
+</html>
